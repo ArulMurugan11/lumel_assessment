@@ -55,3 +55,20 @@ http://localhost:4000/customer
 http://localhost:4000/product
 http://localhost:4000/order
 http://localhost:4000/csv
+
+
+COMPLETED ENDPOINTS
+------------------------------
+ORDER AND REVENUE ENDPOINTS
+http://localhost:4000/order/getAllOrder
+http://localhost:4000/order/totalRevenue
+
+
+PRODUCT ENDPOINTS
+http://localhost:4000/product/getAll
+http://localhost:4000/product/getByCategory
+http://localhost:4000/product/getByRegion
+
+CUSTOMER ENDPOINTS
+
+http://localhost:4000/customer/allCustomer
