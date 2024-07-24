@@ -7,6 +7,7 @@ const port = process.env.PORT || 3000
 const customerRouter = require('./src/routes/customer.route')
 const productRouter = require('./src/routes/product.route')
 const orderRouter = require('./src/routes/order.route')
+const csvRouter = require('./src/routes/load_csv.router')
 
 app.use(bodyParser.json())
 app.use(
@@ -18,6 +19,7 @@ app.use(
 app.use('/customer', customerRouter)
 app.use('/product', productRouter)
 app.use('/order', orderRouter)
+app.use('/csv', csvRouter)
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500
@@ -26,7 +28,7 @@ app.use((err, req, res, next) => {
 })
 
 db.sequelize
-  // sync({ force: true })
+  // .sync({ force: true })
   .sync()
   .then(() => {
     console.log('Synced db.')

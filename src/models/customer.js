@@ -3,9 +3,8 @@ module.exports = function userSchema(sequelize, DataType) {
     'Customer',
     {
       customer_id: {
-        type: DataType.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
+        type: DataType.STRING,
+        // primaryKey: true,
         allowNull: false
       },
       customerName: {
@@ -34,7 +33,7 @@ module.exports = function userSchema(sequelize, DataType) {
   )
 
   Customer.associate = function mapRelation(models) {
-    Customer.hasMany(models.Order, { foreignKey: 'customer_id' })
+    // Customer.hasMany(models.Order, { foreignKey: 'customer_id' })
   }
   return Customer
 }

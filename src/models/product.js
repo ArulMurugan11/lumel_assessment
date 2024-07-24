@@ -1,9 +1,8 @@
 module.exports = function walletSchema(sequelize, DataType) {
   const Product = sequelize.define('Product', {
     product_id: {
-      type: DataType.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
+      type: DataType.STRING,
+      // primaryKey: true,
       allowNull: false
     },
     product_name: {
@@ -37,7 +36,7 @@ module.exports = function walletSchema(sequelize, DataType) {
   })
 
   Product.associate = function mapRelation(models) {
-    Product.hasMany(models.Order, { foreignKey: 'product_id' })
+    // Product.hasMany(models.Order, { foreignKey: 'product_id' })
   }
 
   return Product

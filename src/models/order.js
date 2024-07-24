@@ -3,9 +3,8 @@ module.exports = function transactionSchema(sequelize, DataType) {
     'Order',
     {
       order_id: {
-        type: DataType.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
+        type: DataType.STRING,
+        // primaryKey: true,
         allowNull: false
       },
       date_of_sale: {
@@ -19,6 +18,14 @@ module.exports = function transactionSchema(sequelize, DataType) {
       Payment_method: {
         type: DataType.STRING,
         allowNull: false
+      },
+      customer_id: {
+        type: DataType.STRING,
+        allowNull: false
+      },
+      product_id: {
+        type: DataType.STRING,
+        allowNull: false
       }
     },
     {
@@ -29,7 +36,7 @@ module.exports = function transactionSchema(sequelize, DataType) {
   )
 
   Order.associate = function mapRelation(models) {
-    Order.belongsTo(models.Customer, { foreignKey: 'customer_id' })
+    // Order.belongsTo(models.Customer, { foreignKey: 'customer_id' })
     // Transaction.belongsTo(User);
   }
   // Transaction.belongsTo(User, { foreignKey: 'userId' })
